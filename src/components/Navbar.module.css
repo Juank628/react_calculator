@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 20px;
+}
+
+.list {
+  display: flex;
+  list-style-type: none;
+}
+
+.list a {
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
