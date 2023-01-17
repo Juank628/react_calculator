@@ -4,8 +4,8 @@ import styles from './TodoItem.module.css';
 function TodoItem(props) {
   const [editing, setEditing] = useState(false);
 
-  let viewMode = {};
-  let editMode = {};
+  const viewMode = {};
+  const editMode = {};
 
   if (editing) {
     viewMode.display = 'none';
@@ -18,14 +18,14 @@ function TodoItem(props) {
   };
 
   const handleUpdatedDone = (e) => {
-    if (e.key === "Enter") setEditing(false) 
-  }
+    if (e.key === 'Enter') setEditing(false);
+  };
 
   return (
     <li className={styles.item}>
       <div onDoubleClick={handleEditing} style={viewMode}>
         <input
-          type='checkbox'
+          type="checkbox"
           className={styles.checkbox}
           checked={props.todo.completed}
           onChange={() => props.handleChangeProps(props.todo.id)}
@@ -36,11 +36,11 @@ function TodoItem(props) {
         </button>
       </div>
       <input
-        type='text'
+        type="text"
         style={editMode}
         className={styles.textInput}
         onChange={(e) => props.setUpdate(e.target.value, props.todo.id)}
-        onKeyDown={(e)=> handleUpdatedDone(e)}
+        onKeyDown={(e) => handleUpdatedDone(e)}
       />
     </li>
   );
